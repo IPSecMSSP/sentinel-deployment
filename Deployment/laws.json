@@ -1,0 +1,69 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "name": {
+      "type": "string",
+      "metadata": {
+          "description": "Name of the Log Analytics Workspace to be created."
+      }
+    },
+    "location": {
+      "type": "string",
+      "metadata": {
+          "description": "The Azure location (region) to which the Log Analytics Workspace will be deployed."
+      }
+    },
+    "sku": {
+      "type": "string",
+      "defaultValue": "pergb2018",
+      "metadata": {
+          "description": "The SKU to use for the Log Analytics Workspace.  Valid values are: 'CapacityReservation','Free','LACluster','PerGB2018','PerNode','Premium','Standalone','Standard'"
+      }
+    },
+    "tags": {
+      "type": "object"
+    }
+  },
+  "variables": {
+      "solutions_SecurityInsights_name": "[concat('SecurityInsights(',parameters('name'),')')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.OperationalInsights/workspaces",
+      "apiVersion": "2021-06-01",
+      "name": "[parameters('name')]",
+      "location": "[parameters('location')]",
+      "tags": "[parameters('tags')]",
+      "properties": {
+        "sku": {
+          "name": "[parameters('sku')]",
+          "retentionInDays": 30,
+          "features": {
+            "enableLogAccessUsingOnlyResourcePermissions": true
+          },
+          "workspaceCapping": {
+            "dailyQuotaGb": -1
+          },
+          "publicNetworkAccessForIngestion": "Enabled",
+          "publicNetworkAccessForQuery": "Enabled"
+        }
+      }
+    },
+    {
+      "type": "Microsoft.OperationsManagement/solutions",
+      "apiVersion": "2015-11-01-preview",
+      "name": "[variables('solutions_SecurityInsights_name')]",
+      "location": "[parameters('location')]",
+      "plan": {
+        "name": "[variables('solutions_SecurityInsights_name')]",
+        "promotionCode": "",
+        "product": "OMSGallery/SecurityInsights",
+        "publisher": "Microsoft"
+      },
+      "properties": {
+        "workspaceResourceId": "[resourceId('Microsoft.OperationalInsights/workspaces', parameters('name'))]"
+      }
+    }
+  ]
+}
