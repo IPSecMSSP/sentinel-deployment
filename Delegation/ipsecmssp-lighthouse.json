@@ -1,206 +1,206 @@
 {
-    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/subscriptionDeploymentTemplate.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-     "mspOfferName": {
+  "$schema": "https://schema.management.azure.com/schemas/2019-08-01/subscriptionDeploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "mspOfferName": {
       "type": "string",
       "metadata": {
-       "description": "Specify a unique name for your offer"
+        "description": "Specify a unique name for your offer"
       },
       "defaultValue": "IPSec Guard"
-     },
-     "mspOfferDescription": {
+    },
+    "mspOfferDescription": {
       "type": "string",
       "metadata": {
-       "description": "Name of the Managed Service Provider offering"
+        "description": "Name of the Managed Service Provider offering"
       },
       "defaultValue": "IPSec Guard powered by Microsoft Sentinel"
-     },
-     "managedByTenantId": {
+    },
+    "managedByTenantId": {
       "type": "string",
       "metadata": {
-       "description": "Specify the tenant id of the Managed Service Provider"
+        "description": "Specify the tenant id of the Managed Service Provider"
       },
       "defaultValue": "dbe91186-18cd-4450-b6c6-5becbac448e2"
-     },
-     "authorizations": {
+    },
+    "authorizations": {
       "type": "array",
       "metadata": {
-       "description": "Specify an array of objects, containing tuples of Azure Active Directory principalId, a Azure roleDefinitionId, and an optional principalIdDisplayName. The roleDefinition specified is granted to the principalId in the provider's Active Directory and the principalIdDisplayName is visible to customers."
+        "description": "Specify an array of objects, containing tuples of Azure Active Directory principalId, a Azure roleDefinitionId, and an optional principalIdDisplayName. The roleDefinition specified is granted to the principalId in the provider's Active Directory and the principalIdDisplayName is visible to customers."
       },
       "defaultValue": [
-       {
-        "principalId": "84dc52e4-e447-4299-ad84-03dd624664a8",
-        "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
-        "principalIdDisplayName": "MSP_AllUsers_Reader"
-       },
-       {
-        "principalId": "3b496ebf-92c9-4b70-b2fd-aec185888a02",
-        "roleDefinitionId": "8d289c81-5878-46d4-8554-54e1e3d8b5cb",
-        "principalIdDisplayName": "MSP_ServiceDesk_SentinelReader"
-       },
-       {
-        "principalId": "49718237-14a3-4821-9d2e-e8717618c333",
-        "roleDefinitionId": "3e150937-b8fe-4cfb-8069-0eaf05ecd056",
-        "principalIdDisplayName": "MSP_Analysts_SentinelResponder"
-       },
-       {
-        "principalId": "4af4630c-7bb2-48f5-8c1f-7a9837601435",
-        "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
-        "principalIdDisplayName": "MSP_Engineers_Contributor"
-       },
-       {
-        "principalId": "87422db0-f30f-4b12-9647-71036c9cee33",
-        "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
-        "principalIdDisplayName": "MSP_Platform_SentinelContributor"
-       },
-       {
-        "principalId": "df67eeff-fdac-4eaa-9469-451adac951f4",
-        "roleDefinitionId": "f4c81013-99ee-4d62-a7ee-b3f1f648599a",
-        "principalIdDisplayName": "MSP_Automation_SentinelAutomationContributor"
-       },
-       {
-        "principalId": "e2554194-1161-494c-80ba-e563d42876fe",
-        "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293",
-        "principalIdDisplayName": "MSP_Engineers_LogAnalyticsContributor"
-       },
-       {
-        "principalId": "ce6a7c36-38df-40af-a8b9-d53a7a21eff7",
-        "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293",
-        "principalIdDisplayName": "MSP_Platform_LogAnalyticsContributor"
-       },
-       {
-        "principalId": "ac2ceeb1-5bae-4f70-b48a-728d114dd577",
-        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
-        "principalIdDisplayName": "MSP_Platform_Contributor"
-       },
-       {
-        "principalId": "0ea9c387-d0ec-409d-a49f-329bddcfa574",
-        "roleDefinitionId": "87a39d53-fc1b-424a-814c-f7e04687dc9e",
-        "principalDisplayName": "MSP_Automation_LogicAppContributor"
-       },
-       {
-        "principalId": "db4b0c64-cf7f-4b2e-ad91-337a053c99ae",
-        "roleDefinitionId": "18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
-        "principalIdDisplayName": "MSP_Onboarding_UserAccessAdministrator",
-        "delegatedRoleDefinitionIds": [
+        {
+          "principalId": "84dc52e4-e447-4299-ad84-03dd624664a8",
+          "roleDefinitionId": "acdd72a7-3385-48ef-bd42-f606fba81ae7",
+          "principalIdDisplayName": "MSP_AllUsers_Reader"
+        },
+        {
+          "principalId": "3b496ebf-92c9-4b70-b2fd-aec185888a02",
+          "roleDefinitionId": "8d289c81-5878-46d4-8554-54e1e3d8b5cb",
+          "principalIdDisplayName": "MSP_ServiceDesk_SentinelReader"
+        },
+        {
+          "principalId": "49718237-14a3-4821-9d2e-e8717618c333",
+          "roleDefinitionId": "3e150937-b8fe-4cfb-8069-0eaf05ecd056",
+          "principalIdDisplayName": "MSP_Analysts_SentinelResponder"
+        },
+        {
+          "principalId": "4af4630c-7bb2-48f5-8c1f-7a9837601435",
+          "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
+          "principalIdDisplayName": "MSP_Engineers_Contributor"
+        },
+        {
+          "principalId": "87422db0-f30f-4b12-9647-71036c9cee33",
+          "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade",
+          "principalIdDisplayName": "MSP_Platform_SentinelContributor"
+        },
+        {
+          "principalId": "df67eeff-fdac-4eaa-9469-451adac951f4",
+          "roleDefinitionId": "f4c81013-99ee-4d62-a7ee-b3f1f648599a",
+          "principalIdDisplayName": "MSP_Automation_SentinelAutomationContributor"
+        },
+        {
+          "principalId": "e2554194-1161-494c-80ba-e563d42876fe",
+          "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+          "principalIdDisplayName": "MSP_Engineers_LogAnalyticsContributor"
+        },
+        {
+          "principalId": "ce6a7c36-38df-40af-a8b9-d53a7a21eff7",
+          "roleDefinitionId": "92aaf0da-9dab-42b6-94a3-d43ce8d16293",
+          "principalIdDisplayName": "MSP_Platform_LogAnalyticsContributor"
+        },
+        {
+          "principalId": "ac2ceeb1-5bae-4f70-b48a-728d114dd577",
+          "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c",
+          "principalIdDisplayName": "MSP_Platform_Contributor"
+        },
+        {
+          "principalId": "0ea9c387-d0ec-409d-a49f-329bddcfa574",
+          "roleDefinitionId": "87a39d53-fc1b-424a-814c-f7e04687dc9e",
+          "principalDisplayName": "MSP_Automation_LogicAppContributor"
+        },
+        {
+          "principalId": "db4b0c64-cf7f-4b2e-ad91-337a053c99ae",
+          "roleDefinitionId": "18d7d88d-d35e-4fb5-a5c3-7773c20a72d9",
+          "principalIdDisplayName": "MSP_Onboarding_UserAccessAdministrator",
+          "delegatedRoleDefinitionIds": [
             "b24988ac-6180-42a0-ab88-20f7382dd24c",
             "ab8e14d6-4a74-4a29-9ba8-549422addade",
             "92aaf0da-9dab-42b6-94a3-d43ce8d16293"
-            ]
+          ]
         }
       ]
-     },
-     "eligibleAuthorizations": {
+    },
+    "eligibleAuthorizations": {
       "type": "array",
       "metadata": {
-       "description": "Provide the authorizations that will have just-in-time role assignments on customer environments with support for approvals from the managing tenant"
+        "description": "Provide the authorizations that will have just-in-time role assignments on customer environments with support for approvals from the managing tenant"
       },
       "defaultValue": [
-       {
-        "justInTimeAccessPolicy": {
-         "multiFactorAuthProvider": "Azure",
-         "maximumActivationDuration": "PT2H",
-         "managedByTenantApprovers": []
+        {
+          "justInTimeAccessPolicy": {
+            "multiFactorAuthProvider": "Azure",
+            "maximumActivationDuration": "PT2H",
+            "managedByTenantApprovers": []
+          },
+          "principalId": "6913c056-f760-4a16-9920-d7c38037946b",
+          "principalIdDisplayName": "MSP_Analysts_SentinelContributor",
+          "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade"
         },
-        "principalId": "6913c056-f760-4a16-9920-d7c38037946b",
-        "principalIdDisplayName": "MSP_Analysts_SentinelContributor",
-        "roleDefinitionId": "ab8e14d6-4a74-4a29-9ba8-549422addade"
-       },
-       {
-        "justInTimeAccessPolicy": {
-         "multiFactorAuthProvider": "Azure",
-         "maximumActivationDuration": "PT4H",
-         "managedByTenantApprovers": [
-          {
-           "principalId": "9a422aaf-e35a-451c-842e-bc7ae5cd97fc",
-           "principalIdDisplayName": "SOC_PlatformEngineering"
-          }
-         ]
+        {
+          "justInTimeAccessPolicy": {
+            "multiFactorAuthProvider": "Azure",
+            "maximumActivationDuration": "PT4H",
+            "managedByTenantApprovers": [
+              {
+                "principalId": "9a422aaf-e35a-451c-842e-bc7ae5cd97fc",
+                "principalIdDisplayName": "SOC_PlatformEngineering"
+              }
+            ]
+          },
+          "principalId": "4af4630c-7bb2-48f5-8c1f-7a9837601435",
+          "principalIdDisplayName": "MSP_Engineers_Contributor",
+          "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
         },
-        "principalId": "4af4630c-7bb2-48f5-8c1f-7a9837601435",
-        "principalIdDisplayName": "MSP_Engineers_Contributor",
-        "roleDefinitionId": "b24988ac-6180-42a0-ab88-20f7382dd24c"
-       },
-       {
-        "justInTimeAccessPolicy": {
-         "multiFactorAuthProvider": "Azure",
-         "maximumActivationDuration": "PT2H",
-         "managedByTenantApprovers": [
-          {
-           "principalId": "9a422aaf-e35a-451c-842e-bc7ae5cd97fc",
-           "principalIdDisplayName": "SOC_PlatformEngineering"
-          }
-         ]
-        },
-        "principalId": "67ed389f-3eb8-4b94-acec-548beee1bb3a",
-        "principalIdDisplayName": "MSP_Engineers_DeleteMangagedServicesRegistration",
-        "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46"
-       }
+        {
+          "justInTimeAccessPolicy": {
+            "multiFactorAuthProvider": "Azure",
+            "maximumActivationDuration": "PT2H",
+            "managedByTenantApprovers": [
+              {
+                "principalId": "9a422aaf-e35a-451c-842e-bc7ae5cd97fc",
+                "principalIdDisplayName": "SOC_PlatformEngineering"
+              }
+            ]
+          },
+          "principalId": "67ed389f-3eb8-4b94-acec-548beee1bb3a",
+          "principalIdDisplayName": "MSP_Engineers_DeleteMangagedServicesRegistration",
+          "roleDefinitionId": "91c1777a-f3dc-4fae-b103-61d183457e46"
+        }
       ]
-     },
-     "rgName": {
+    },
+    "rgName": {
       "type": "string",
       "defaultValue": "lab-sentinel-rg"
-     }
-    },
-    "variables": {
-     "mspRegistrationName": "[guid(parameters('mspOfferName'))]",
-     "mspAssignmentName": "[guid(parameters('mspOfferName'))]"
-    },
-    "resources": [
-     {
+    }
+  },
+  "variables": {
+    "mspRegistrationName": "[guid(parameters('mspOfferName'))]",
+    "mspAssignmentName": "[guid(parameters('mspOfferName'))]"
+  },
+  "resources": [
+    {
       "type": "Microsoft.ManagedServices/registrationDefinitions",
       "apiVersion": "2020-02-01-preview",
       "name": "[variables('mspRegistrationName')]",
       "properties": {
-       "registrationDefinitionName": "[parameters('mspOfferName')]",
-       "description": "[parameters('mspOfferDescription')]",
-       "managedByTenantId": "[parameters('managedByTenantId')]",
-       "authorizations": "[parameters('authorizations')]",
-       "eligibleAuthorizations": "[parameters('eligibleAuthorizations')]"
+        "registrationDefinitionName": "[parameters('mspOfferName')]",
+        "description": "[parameters('mspOfferDescription')]",
+        "managedByTenantId": "[parameters('managedByTenantId')]",
+        "authorizations": "[parameters('authorizations')]",
+        "eligibleAuthorizations": "[parameters('eligibleAuthorizations')]"
       }
-     },
-     {
+    },
+    {
       "type": "Microsoft.Resources/deployments",
       "apiVersion": "2018-05-01",
       "name": "rgAssignment",
       "resourceGroup": "[parameters('rgName')]",
       "dependsOn": [
-       "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+        "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
       ],
       "properties": {
-       "mode": "Incremental",
-       "template": {
-        "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
-        "contentVersion": "1.0.0.0",
-        "parameters": {},
-        "resources": [
-         {
-          "type": "Microsoft.ManagedServices/registrationAssignments",
-          "apiVersion": "2020-02-01-preview",
-          "name": "[variables('mspAssignmentName')]",
-          "properties": {
-           "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
-          }
-         }
-        ]
-       }
+        "mode": "Incremental",
+        "template": {
+          "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+          "contentVersion": "1.0.0.0",
+          "parameters": {},
+          "resources": [
+            {
+              "type": "Microsoft.ManagedServices/registrationAssignments",
+              "apiVersion": "2020-02-01-preview",
+              "name": "[variables('mspAssignmentName')]",
+              "properties": {
+                "registrationDefinitionId": "[resourceId('Microsoft.ManagedServices/registrationDefinitions/', variables('mspRegistrationName'))]"
+              }
+            }
+          ]
+        }
       }
-     }
-    ],
-    "outputs": {
-     "mspOfferName": {
+    }
+  ],
+  "outputs": {
+    "mspOfferName": {
       "type": "string",
       "value": "[concat('Managed by', ' ', parameters('mspOfferName'))]"
-     },
-     "authorizations": {
+    },
+    "authorizations": {
       "type": "array",
       "value": "[parameters('authorizations')]"
-     },
-     "eligibleAuthorizations": {
+    },
+    "eligibleAuthorizations": {
       "type": "array",
       "value": "[parameters('eligibleAuthorizations')]"
-     }
     }
-   }
+  }
+}

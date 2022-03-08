@@ -5,20 +5,20 @@
     "name": {
       "type": "string",
       "metadata": {
-          "description": "Name of the Log Analytics Workspace to be created."
+        "description": "Name of the Log Analytics Workspace to be created."
       }
     },
     "location": {
       "type": "string",
       "metadata": {
-          "description": "The Azure location (region) to which the Log Analytics Workspace will be deployed."
+        "description": "The Azure location (region) to which the Log Analytics Workspace will be deployed."
       }
     },
     "sku": {
       "type": "string",
       "defaultValue": "pergb2018",
       "metadata": {
-          "description": "The SKU to use for the Log Analytics Workspace.  Valid values are: 'CapacityReservation','Free','LACluster','PerGB2018','PerNode','Premium','Standalone','Standard'"
+        "description": "The SKU to use for the Log Analytics Workspace.  Valid values are: 'CapacityReservation','Free','LACluster','PerGB2018','PerNode','Premium','Standalone','Standard'"
       }
     },
     "tags": {
@@ -26,7 +26,7 @@
     }
   },
   "variables": {
-      "solutions_SecurityInsights_name": "[concat('SecurityInsights(',parameters('name'),')')]"
+    "solutions_SecurityInsights_name": "[concat('SecurityInsights(',parameters('name'),')')]"
   },
   "resources": [
     {
