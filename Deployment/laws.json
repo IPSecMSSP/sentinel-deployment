@@ -10,14 +10,29 @@
     },
     "location": {
       "type": "string",
-      "defaultValue": "[resourceGroup().location]",
+      "defaultValue": "australiasoutheast",
+      "allowedValues": [
+        "australiaeast",
+        "australiasoutheast",
+        "australiacentral"
+      ],
       "metadata": {
-        "description": "The Azure location (region) to which the Log Analytics Workspace will be deployed."
+        "description": "The Azure location (region) to which the Log Analytics Workspace will be deployed. We currently only offer our services in Australia."
       }
     },
     "sku": {
       "type": "string",
-      "defaultValue": "pergb2018",
+      "defaultValue": "PerGB2018",
+      "allowedValues": [
+        "CapacityReservation",
+        "Free",
+        "LACluster",
+        "PerGB2018",
+        "PerNode",
+        "Premium",
+        "Standalone",
+        "Standard"
+      ],
       "metadata": {
         "description": "The SKU to use for the Log Analytics Workspace.  Valid values are: 'CapacityReservation','Free','LACluster','PerGB2018','PerNode','Premium','Standalone','Standard'"
       }
