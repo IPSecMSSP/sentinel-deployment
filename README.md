@@ -4,7 +4,7 @@ Resources used to deploy Customer Sentinel Instances
 
 The resources in this repository are intended to assist with and automate the onboarding of Customers and the deployment of Microsoft Sentinel within the Customer's environment.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FIPSecMSSP%2Fsentinel-deployment%2Fmain%2FDelegation%2Fipsec-mssp-lighthouse.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FIPSecMSSP%2Fsentinel-deployment%2Falpha%2FDelegation%2Fipsec-mssp-lighthouse.json)
 
 ## Onboarding
 
@@ -28,4 +28,4 @@ The deployment of Microsoft Sentinel requires several components:
 
 The first two of these can be deployed using the included ARM Template.
 
-[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FIPSecMSSP%2Fsentinel-deployment%2Fmain%2FDeployment%2Flaws.json)
+[![Deploy to Azure](https://aka.ms/deploytoazurebutton)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FIPSecMSSP%2Fsentinel-deployment%2Falpha%2FDeployment%2Flaws.json)
