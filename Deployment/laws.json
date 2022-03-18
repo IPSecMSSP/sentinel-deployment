@@ -20,9 +20,6 @@
       "metadata": {
         "description": "The SKU to use for the Log Analytics Workspace.  Valid values are: 'CapacityReservation','Free','LACluster','PerGB2018','PerNode','Premium','Standalone','Standard'"
       }
-    },
-    "tags": {
-      "type": "object"
     }
   },
   "variables": {
@@ -34,7 +31,6 @@
       "apiVersion": "2021-06-01",
       "name": "[parameters('name')]",
       "location": "[parameters('location')]",
-      "tags": "[parameters('tags')]",
       "properties": {
         "sku": {
           "name": "[parameters('sku')]",
